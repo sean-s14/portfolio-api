@@ -48,10 +48,12 @@ INSTALLED_APPS = [
     # 3rd Party
     'rest_framework',
     'corsheaders',
+    'markdownx',
 
     # Custom
     'auth2',
     'projects',
+    'articles',
 ]
 
 MIDDLEWARE = [

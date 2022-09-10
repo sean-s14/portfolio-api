@@ -25,6 +25,8 @@ from .tokens import (
 urlpatterns = [
     path('auth/', include('auth2.urls')),
     path('projects/', include('projects.urls')),
+    path('articles/', include('articles.urls')),
+    path('markdownx/', include('markdownx.urls')),
     path('api-auth/', include('rest_framework.urls')),
     path('api/token/', MyTokenObtainPairView.as_view(), name='token_obtain_pair'),
     path('api/token/refresh/', MyTokenRefreshView.as_view(), name='token_refresh'),
