@@ -1,11 +1,10 @@
 from django.contrib import admin
 from django.contrib.admin import ModelAdmin
-from markdownx.admin import MarkdownxModelAdmin
 from django.utils.translation import gettext_lazy as _
 from .models import Article
 
 
-class ArticleAdmin(MarkdownxModelAdmin):
+class ArticleAdmin(ModelAdmin):
     fieldsets = (
         (None, {'fields': ('title', 'slug', 'date_created', 'text', 'imageURI')}),
     )

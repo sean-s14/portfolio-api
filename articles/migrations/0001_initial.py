@@ -2,7 +2,7 @@
 
 from django.db import migrations, models
 import django.utils.timezone
-import markdownx.models
+import tinymce.models
 
 
 class Migration(migrations.Migration):
@@ -18,7 +18,7 @@ class Migration(migrations.Migration):
             fields=[
                 ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
                 ('title', models.CharField(max_length=150, unique=True)),
-                ('text', markdownx.models.MarkdownxField()),
+                ('text', tinymce.models.HTMLField()),
                 ('date_created', models.DateTimeField(default=django.utils.timezone.now, verbose_name='date created')),
             ],
         ),
