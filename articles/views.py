@@ -28,3 +28,10 @@ class ArticleDetail(RetrieveAPIView):
     permission_classes = ()
     authentication_classes = ()
     lookup_field = 'slug'
+
+class ArticleDetailUpdate(UpdateAPIView):
+    queryset = Article.objects.all()
+    serializer_class = ArticleSerializer
+    permission_classes = (IsAdminUser,)
+    # authentication_classes = ()
+    lookup_field = 'slug'
