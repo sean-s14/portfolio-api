@@ -33,5 +33,10 @@ class ArticleDetailUpdate(UpdateAPIView):
     queryset = Article.objects.all()
     serializer_class = ArticleSerializer
     permission_classes = (IsAdminUser,)
-    # authentication_classes = ()
+    lookup_field = 'slug'
+
+class ArticleDetailDelete(DestroyAPIView):
+    queryset = Article.objects.all()
+    serializer_class = ArticleSerializer
+    permission_classes = (IsAdminUser,)
     lookup_field = 'slug'
