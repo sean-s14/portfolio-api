@@ -4,6 +4,7 @@ from django.utils.translation import gettext_lazy as _
 from tinymce import models as tinymce_models
 from django.utils.text import slugify
 
+
 class Article(models.Model):
     title        = models.CharField(unique=True, blank=False, null=False, max_length=60)
     slug         = models.SlugField(unique=True, blank=True, null=True, max_length=60)

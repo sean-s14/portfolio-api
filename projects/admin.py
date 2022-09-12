@@ -6,7 +6,7 @@ from .models import Project
 
 class ProjectAdmin(ModelAdmin):
     fieldsets = (
-        (None, {'fields': ('title', 'link', 'imageURI', 'description', 'date_created')}),
+        (None, {'fields': ('title', 'slug', 'link', 'imageURI', 'description', 'date_created')}),
     )
     # add_fieldsets = (
     #     (None, {

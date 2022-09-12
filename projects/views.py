@@ -1,13 +1,10 @@
-from django.shortcuts import render
-
-
 # Rest Framework
 from rest_framework.generics import (
-    RetrieveUpdateDestroyAPIView,
     RetrieveAPIView,
     ListAPIView,
     CreateAPIView,
     UpdateAPIView,
+    DestroyAPIView,
 )
 from rest_framework.permissions import IsAdminUser
 from rest_framework.response import Response
@@ -30,3 +27,18 @@ class ProjectDetail(RetrieveAPIView):
     serializer_class = ProjectSerializer
     permission_classes = ()
     authentication_classes = ()
+    lookup_field = 'slug'
+
+
+class ProjectDetailUpdate(UpdateAPIView):
+    queryset = Project.objects.all()
+    serializer_class = ProjectSerializer
+    permission_classes = (IsAdminUser,)
+    lookup_field = 'slug'
+
+
+class ProjectDetailDelete(DestroyAPIView):
+    queryset = Project.objects.all()
+    serializer_class = ProjectSerializer
+    permission_classes = (IsAdminUser,)
+    lookup_field = 'slug'
