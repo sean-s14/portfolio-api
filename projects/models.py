@@ -22,7 +22,7 @@ class Project(models.Model):
     title        = models.CharField(unique=True, blank=False, null=False, max_length=150)
     slug         = models.SlugField(unique=True, blank=True, null=True, max_length=60)
     category     = models.CharField(max_length=4, choices=Category.choices, blank=False, null=False)
-    link         = models.URLField(unique=True, blank=False, null=False, max_length=150)
+    link         = models.URLField(unique=True, blank=True, null=True, max_length=150)
     description  = models.TextField(blank=True, null=True)
     date_created = models.DateTimeField(_("date created"), default=timezone.now)
 
